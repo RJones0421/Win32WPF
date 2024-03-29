@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Win32WPF", "Win32WPF\Win32WPF.csproj", "{92EFB13E-4F20-4DE2-B1BE-4402D8ED1CC0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7C018ED6-F43F-4316-BBD0-B6A5817A67E5} = {7C018ED6-F43F-4316-BBD0-B6A5817A67E5}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CppDll", "CppDll\CppDll.vcxproj", "{7C018ED6-F43F-4316-BBD0-B6A5817A67E5}"
 EndProject
