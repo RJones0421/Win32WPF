@@ -10,6 +10,14 @@ workspace "Win32WPF"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["Glad"] = "CppDll/Vendor/Glad/include"
+IncludeDir["GLFW"] = "CppDll/Vendor/GLFW/include"
+
+include "CppDll/Vendor/Glad"
+include "CppDll/Vendor/GLFW"
+
 project "CppDll"
 	location "CppDll"
 	kind "SharedLib"
@@ -22,12 +30,12 @@ project "CppDll"
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 	
 	pchheader "pch.h"
-	pchsource "CppDll/pch.cpp"
+	pchsource "CppDll/src/pch.cpp"
 	
 	files
 	{
-		"%{prj.name}/**.h",
-		"%{prj.name}/**.cpp",
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp",
 	}
 	
 	defines
@@ -37,7 +45,16 @@ project "CppDll"
 	
 	includedirs
 	{
-		"%{prj.name}",
+		"%{prj.name}/src",
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.GLFW}",
+	}
+	
+	links
+	{
+		"Glad",
+		"GLFW",
+		"opengl32.lib"
 	}
 	
 	filter "system:windows"

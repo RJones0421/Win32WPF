@@ -40,7 +40,7 @@ DLL_EXPORT window_handle InitializeWin32( window_handle parent, int width, int h
   wc.hInstance = 0;
   wc.hIcon = LoadIcon( NULL, IDI_APPLICATION );
   wc.hCursor = LoadCursor( NULL, IDC_ARROW );
-  wc.hbrBackground = CreateSolidBrush( RGB( 255, 0, 100 ) );
+  wc.hbrBackground = CreateSolidBrush( RGB( 255, 120, 100 ) );
   wc.lpszMenuName = NULL;
   wc.lpszClassName = L"Win32Window";
   wc.hIconSm = LoadIcon( NULL, IDI_APPLICATION );
